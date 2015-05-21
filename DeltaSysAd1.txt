@@ -1,0 +1,10 @@
+n=1
+cwd=$(pwd)
+for n in {1..100}
+do
+mkdir folder$n
+touch folder$n/folder$n
+chmod 700 $cwd/folder$n/folder$n
+chmod 700 folder$n
+n=n+1
+done
