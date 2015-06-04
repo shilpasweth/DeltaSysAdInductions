@@ -1,0 +1,19 @@
+def Example(place):
+ import os,sys,MySQLdb
+ os.chdir (place)
+ def Script1(time):
+  import MySQLdb
+  db = MySQLdb.connect("localhost","testuser","test123","TESTDB" )
+  cursor = db.cursor()
+  sql = "INSERT INTO EXAMPLE(DATE) \VALUES ('%s')" % \(time)
+  try:
+   cursor.execute(sql)
+   db.commit()
+  except:
+   db.rollback()
+  db.close()  
+ def Script2():
+  localtime = time.asctime( time.localtime(time.time()) )
+  python Script1(localtime)
+ crontab -e
+ 10 * * * * Script2()
