@@ -13,6 +13,7 @@ def Example(place):
    db.rollback()
   db.close()  
  def Script2():
+  import time,Script1
   localtime = time.asctime( time.localtime(time.time()) )
   python Script1(localtime)
  crontab -e
